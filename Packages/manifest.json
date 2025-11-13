@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.meta.xr.mrutilitykit": "file:E:/UnityEngine/Project/com.meta.xr.mrutilitykit-81.0.1.tgz",
+    "com.meta.xr.sdk.audio": "file:E:/UnityEngine/Project/com.meta.xr.sdk.audio-81.0.1.tgz",
+    "com.meta.xr.sdk.core": "file:E:/UnityEngine/Project/com.meta.xr.sdk.core-81.0.1.tgz",
+    "com.meta.xr.sdk.haptics": "file:E:/UnityEngine/Project/com.meta.xr.sdk.haptics-81.0.1.tgz",
+    "com.meta.xr.sdk.interaction": "file:E:/UnityEngine/Project/com.meta.xr.sdk.interaction-81.0.1.tgz",
+    "com.meta.xr.sdk.interaction.ovr": "file:E:/UnityEngine/Project/com.meta.xr.sdk.interaction.ovr-81.0.1.tgz",
+    "com.meta.xr.sdk.sharedassets": "file:E:/UnityEngine/Project/com.meta.xr.sdk.sharedassets-69.0.0.tgz",
     "com.unity.collab-proxy": "2.10.0",
     "com.unity.feature.development": "1.0.1",
     "com.unity.shadergraph": "14.1.0",

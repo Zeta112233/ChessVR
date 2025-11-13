@@ -1,5 +1,72 @@
 {
   "dependencies": {
+    "com.meta.xr.mrutilitykit": {
+      "version": "file:E:/UnityEngine/Project/com.meta.xr.mrutilitykit-81.0.1.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.ai.navigation": "1.1.4",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.meta.xr.sdk.core": "81.0.1",
+        "com.unity.textmeshpro": "3.0.6"
+      }
+    },
+    "com.meta.xr.sdk.audio": {
+      "version": "file:E:/UnityEngine/Project/com.meta.xr.sdk.audio-81.0.1.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {}
+    },
+    "com.meta.xr.sdk.core": {
+      "version": "file:E:/UnityEngine/Project/com.meta.xr.sdk.core-81.0.1.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {}
+    },
+    "com.meta.xr.sdk.haptics": {
+      "version": "file:E:/UnityEngine/Project/com.meta.xr.sdk.haptics-81.0.1.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.meta.xr.sdk.core": "81.0.1"
+      }
+    },
+    "com.meta.xr.sdk.interaction": {
+      "version": "file:E:/UnityEngine/Project/com.meta.xr.sdk.interaction-81.0.1.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.textmeshpro": "3.0.6",
+        "com.unity.ugui": "1.0.0"
+      }
+    },
+    "com.meta.xr.sdk.interaction.ovr": {
+      "version": "file:E:/UnityEngine/Project/com.meta.xr.sdk.interaction.ovr-81.0.1.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.meta.xr.sdk.interaction": "81.0.1",
+        "com.meta.xr.sdk.core": "81.0.1"
+      }
+    },
+    "com.meta.xr.sdk.sharedassets": {
+      "version": "file:E:/UnityEngine/Project/com.meta.xr.sdk.sharedassets-69.0.0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.textmeshpro": "3.0.6"
+      }
+    },
+    "com.unity.ai.navigation": {
+      "version": "1.1.5",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
+      },
+      "url": "https://packages.tuanjie.cn"
+    },
     "com.unity.collab-proxy": {
       "version": "2.10.0",
       "depth": 0,
@@ -71,6 +138,13 @@
     },
     "com.unity.mathematics": {
       "version": "1.2.6",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.tuanjie.cn"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
