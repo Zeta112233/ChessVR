@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GoBoard
+  - Pieces
+  - Gridlines
+  - Intersections
   layers:
   - Default
   - TransparentFX
@@ -11,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - "\u68CB\u5B50"
+  - "\u68CB\u76D8"
+  - "\u684C\u5B50"
+  - "\u5730\u677F"
   - 
   - 
   - 

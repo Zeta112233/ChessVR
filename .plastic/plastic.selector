@@ -1,0 +1,4 @@
+repository "ChessVR@tj_zrszrszrs11@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"
