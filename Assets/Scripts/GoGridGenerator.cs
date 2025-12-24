@@ -9,10 +9,6 @@ public class GoGridGenerator : MonoBehaviour
     [Header("棋盘 MeshRenderer（拖棋盘那块平面的 MeshRenderer 上来）")]
     public MeshRenderer boardRenderer;
 
-    [Header("旧参数（只有在没填 boardRenderer 时兜底使用）")]
-    public Vector2 boardSize = new Vector2(0.4999f, 0.4999f);
-    public float BoardScale = 10f;
-
     [Header("输出")]
     public Transform gridRoot;
     public List<Transform> gridPoints = new List<Transform>();
@@ -52,13 +48,10 @@ public class GoGridGenerator : MonoBehaviour
             Destroy(child.gameObject);   // Awake 里用 Destroy 就行，不要 DestroyImmediate
         }
         gridPoints.Clear();
+        float yOffset = 0.005f;
 
-        bool usedRendererBounds = false;
-        float yOffset = 0.02f;
+        // ---------------- 用 MeshRenderer 的世界空间生成棋盘格点 ----------------
 
-        // ---------------- 方案 1：用 MeshRenderer 的世界空间 bounds（推荐） ----------------
-        if (boardRenderer != null)
-        {
             Bounds bounds = boardRenderer.bounds;   // 世界空间包围盒
             Vector3 center = bounds.center;
             Vector3 size   = bounds.size;
@@ -88,41 +81,10 @@ public class GoGridGenerator : MonoBehaviour
             }
 
             Debug.Log($"[GoGridGenerator] 使用 Renderer.bounds 生成 {gridPoints.Count} 个格点。");
-            usedRendererBounds = true;
         }
+    
 
-        // ---------------- 方案 2：没填 Renderer 时，用旧参数兜底 ----------------
-        if (!usedRendererBounds)
-        {
-            float worldX = boardSize.x * BoardScale;
-            float worldZ = boardSize.y * BoardScale;
-            float cellX = worldX / (gridSize - 1);
-            float cellZ = worldZ / (gridSize - 1);
-
-            for (int x = 0; x < gridSize; x++)
-            {
-                for (int z = 0; z < gridSize; z++)
-                {
-                    GameObject p = new GameObject($"Intersection_{x}_{z}");
-                    Transform t = p.transform;
-                    t.SetParent(gridRoot);
-
-                    float px = -worldX / 2f + x * cellX;
-                    float pz = -worldZ / 2f + z * cellZ;
-
-                    t.localPosition = new Vector3(px, yOffset, pz);
-                    t.localRotation = Quaternion.identity;
-
-                    p.tag = "Intersections";
-                    gridPoints.Add(t);
-                }
-            }
-
-            Debug.Log($"[GoGridGenerator] 使用 BoardSize/BoardScale 生成 {gridPoints.Count} 个格点。");
-        }
-    }
-
-    // 运行时 + 选中棋盘格时，在 Scene 里画出所有格点
+    // 运行时选中棋盘格，在 Scene 里画出所有格点(Debug)
     void OnDrawGizmosSelected()
     {
         if (gridPoints == null || gridPoints.Count == 0)
